@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>space-chainsaw</title>
+    <link>https://spacechainsaw.blog</link>
+    <description>space chainsaw — a static blog</description>
+    <lastBuildDate>Fri, 06 Mar 2026 21:19:26 GMT</lastBuildDate>
+    
+    <item>
+      <title>Hello, World. Again.</title>
+      <link>https://spacechainsaw.blog/posts/hello-world/</link>
+      <guid>https://spacechainsaw.blog/posts/hello-world/</guid>
+      <pubDate>Fri, 06 Mar 2026 21:19:26 GMT</pubDate>
+      <description>What am I doing here?</description>
+    </item>
+  </channel>
+</rss>

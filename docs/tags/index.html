@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Categories — space chainsaw</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- Mobile top bar (hidden on desktop) -->
+  <header class="topbar">
+    <span class="topbar__title"><a href="../index.html">space chainsaw</a></span>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+    </button>
+  </header>
+
+  <!-- Overlay backdrop (mobile) -->
+  <div class="nav-backdrop" id="navBackdrop"></div>
+
+  <!-- Site wrapper: CSS grid on desktop, normal flow on mobile -->
+  <div class="site-wrapper">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar__brand">
+        <a href="../index.html" class="sidebar__title">space chainsaw</a>
+      </div>
+      <nav class="sidebar__nav">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../about/index.html" class="nav-link">About</a>
+        <a href="../archive/index.html" class="nav-link">Archive</a>
+        <a href="../tags/index.html" class="nav-link nav-link--active">Categories</a>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <div class="layout">
+      <main class="main-content">
+        
+    <div class="page-header">
+      <h1 class="page-header__title">Categories</h1>
+      <span class="page-header__sub">Browse posts by category</span>
+    </div>
+    <ul class="archive-list">
+      
+      <li class="archive-item">
+        <a href="personal/index.html" class="archive-item__title">personal</a>
+        <span class="archive-item__count">1 post</span>
+      </li>
+
+      <li class="archive-item">
+        <a href="reflections/index.html" class="archive-item__title">reflections</a>
+        <span class="archive-item__count">1 post</span>
+      </li>
+    </ul>
+      </main>
+      <footer class="footer">
+        <span>&copy; <span id="year"></span> space chainsaw</span>
+        <span> &bull; <a href="../rss.xml">RSS</a></span>
+      </footer>
+    </div>
+
+  </div><!-- /.site-wrapper -->
+
+  <script src="../js/nav.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
