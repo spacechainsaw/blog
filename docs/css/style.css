@@ -122,11 +122,13 @@ body.nav-open .hamburger__line:nth-child(3) { transform: translateY(-9px) rotate
   background: rgba(0, 0, 0, 0.65);
   z-index: 150;
   opacity: 0;
+  pointer-events: none;
   transition: opacity var(--transition);
 }
 
 body.nav-open .nav-backdrop {
   opacity: 1;
+  pointer-events: auto;
 }
 
 /* ---- Sidebar ---- */
