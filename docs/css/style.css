@@ -339,6 +339,17 @@ body.nav-open .nav-backdrop {
   margin-top: 0.5rem;
 }
 
+.post__rating {
+  margin-top: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+.post__rating-value {
+  color: var(--text-muted);
+}
+
 /* Post body typography */
 .post__body {
   line-height: 1.85;

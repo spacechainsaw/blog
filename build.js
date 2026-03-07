@@ -79,6 +79,27 @@ function parseDraftFlag(value) {
   return false;
 }
 
+function parseRating(value) {
+  if (value === undefined || value === null || value === '') return null;
+
+  const numeric = Number(value);
+  if (Number.isNaN(numeric)) return null;
+
+  const clamped = Math.max(0, Math.min(5, numeric));
+  return Math.round(clamped * 10) / 10;
+}
+
+function formatRatingStars(rating) {
+  if (rating === null) return '';
+
+  const roundedToHalf = Math.round(rating * 2) / 2;
+  const fullStars = Math.floor(roundedToHalf);
+  const hasHalfStar = roundedToHalf % 1 !== 0;
+  const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+
+  return `${'★'.repeat(fullStars)}${hasHalfStar ? '½' : ''}${'☆'.repeat(emptyStars)}`;
+}
+
 function stripMarkdown(markdown) {
   return String(markdown)
     .replace(/```[\s\S]*?```/g, ' ')
@@ -199,6 +220,7 @@ function readPosts() {
         date,
         description: data.description || '',
         slug,
+        rating: parseRating(data.rating),
         draft: parseDraftFlag(data.draft),
         tags: normalizeTags(data),
         readingTimeMinutes: estimateReadingTimeMinutes(content),
@@ -236,6 +258,8 @@ function readPosts() {
     .map((post) => ({
       ...post,
       readingTimeLabel: `${post.readingTimeMinutes} minute read`,
+      ratingLabel: post.rating !== null ? `${post.rating}/5` : '',
+      ratingStars: formatRatingStars(post.rating),
     }));
   const tags = buildTagIndex(posts);
   const siteTitle = packageJson.name || 'My Blog';

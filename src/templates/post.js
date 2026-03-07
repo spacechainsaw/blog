@@ -13,6 +13,7 @@ function postPage(post) {
         <div class="post__meta">${post.date}${post.readingTimeLabel ? ` &bull; ${post.readingTimeLabel}` : ''}</div>
         <h1 class="post__title">${post.title}</h1>
         ${post.description ? `<p class="post__desc">${post.description}</p>` : ''}
+        ${post.ratingLabel ? `<p class="post__rating">${post.ratingStars} <span class="post__rating-value">(${post.ratingLabel})</span></p>` : ''}
         ${post.tags.length
           ? `<div class="tag-list">${post.tags
               .map(
