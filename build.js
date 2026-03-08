@@ -79,6 +79,33 @@ function parseDraftFlag(value) {
   return false;
 }
 
+function normalizePostDate(value) {
+  if (value === undefined || value === null || value === '') return '';
+
+  if (value instanceof Date && !Number.isNaN(value.getTime())) {
+    return value.toISOString().slice(0, 10);
+  }
+
+  const raw = String(value).trim();
+  if (!raw) return '';
+
+  if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) {
+    return raw;
+  }
+
+  const parsed = new Date(raw);
+  if (Number.isNaN(parsed.getTime())) return '';
+
+  return parsed.toISOString().slice(0, 10);
+}
+
+function getDateSortValue(dateString) {
+  if (!dateString) return 0;
+  const parsed = new Date(`${dateString}T00:00:00Z`);
+  if (Number.isNaN(parsed.getTime())) return 0;
+  return parsed.getTime();
+}
+
 function parseRating(value) {
   if (value === undefined || value === null || value === '') return null;
 
@@ -211,13 +238,12 @@ function readPosts() {
       const slug = data.slug || filename.replace(/\.md$/, '');
 
       // date: normalise to YYYY-MM-DD string
-      const date = data.date
-        ? String(data.date).slice(0, 10)
-        : '';
+      const date = normalizePostDate(data.date);
 
       return {
         title:       data.title       || slug,
         date,
+        dateSortValue: getDateSortValue(date),
         description: data.description || '',
         slug,
         rating: parseRating(data.rating),
@@ -227,7 +253,12 @@ function readPosts() {
         htmlContent: marked(content),
       };
     })
-    .sort((a, b) => (a.date < b.date ? 1 : -1)); // newest first
+    .sort((a, b) => {
+      if (a.dateSortValue !== b.dateSortValue) {
+        return b.dateSortValue - a.dateSortValue;
+      }
+      return a.slug.localeCompare(b.slug);
+    }); // newest first
 }
 
 // ---- Build ----------------------------------------------------------

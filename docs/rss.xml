@@ -4,13 +4,20 @@
     <title>space-chainsaw</title>
     <link>https://spacechainsaw.blog</link>
     <description>space chainsaw — a static blog</description>
-    <lastBuildDate>Sat, 07 Mar 2026 01:51:30 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 08 Mar 2026 04:23:32 GMT</lastBuildDate>
     
+    <item>
+      <title>Book Review: The Will to Change</title>
+      <link>https://spacechainsaw.blog/posts/will-to-change/</link>
+      <guid>https://spacechainsaw.blog/posts/will-to-change/</guid>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 GMT</pubDate>
+      <description>In 2026, we’re done stepping on eggshells. bell hooks’ The Will to Change was a 2003 act of courage, but today, prioritizing male &quot;palatability&quot; feels like a luxury we can’t afford while female survival is still at stake.</description>
+    </item>
     <item>
       <title>Hello, World. Again.</title>
       <link>https://spacechainsaw.blog/posts/hello-world/</link>
       <guid>https://spacechainsaw.blog/posts/hello-world/</guid>
-      <pubDate>Sat, 07 Mar 2026 01:51:30 GMT</pubDate>
+      <pubDate>Thu, 26 Feb 2026 00:00:00 GMT</pubDate>
       <description>What am I doing here?</description>
     </item>
   </channel>
