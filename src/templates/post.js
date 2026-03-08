@@ -11,7 +11,7 @@ function postPage(post) {
     <article class="post">
       <header class="post__header">
         <div class="post__meta">${post.date}${post.readingTimeLabel ? ` &bull; ${post.readingTimeLabel}` : ''}</div>
-        <h1 class="post__title">${post.title}</h1>
+        <h1 class="post__title title-with-chip">${post.displayTitle}${post.isBookReview ? '<span class="review-chip">BOOK REVIEW</span>' : ''}</h1>
         ${post.description ? `<p class="post__desc">${post.description}</p>` : ''}
         ${post.ratingLabel ? `<p class="post__rating">${post.ratingStars} <span class="post__rating-value">(${post.ratingLabel})</span></p>` : ''}
         ${post.tags.length
@@ -31,7 +31,7 @@ function postPage(post) {
     </article>`;
 
   return layout({
-    title: post.title,
+    title: post.displayTitle,
     content,
     activePage: 'home',
     rootPath: '../../',

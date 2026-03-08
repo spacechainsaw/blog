@@ -5,7 +5,10 @@
   "homepage": "https://spacechainsaw.blog",
   "scripts": {
     "build": "node build.js",
-    "dev":   "node dev.js"
+    "dev":   "node dev.js",
+    "book-review": "node scripts/create-book-review.js",
+    "describe-reviews": "node scripts/generate-review-descriptions.js",
+    "format-reviews": "node scripts/format-review-flow.js"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",

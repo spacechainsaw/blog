@@ -14,7 +14,7 @@ function homePage(posts) {
     <article class="post-card">
       <div class="post-card__meta">${p.date}${p.readingTimeLabel ? ` &bull; ${p.readingTimeLabel}` : ''}</div>
       <h2 class="post-card__title">
-        <a href="posts/${p.slug}/index.html">${p.title}</a>
+        <a href="posts/${p.slug}/index.html" class="title-with-chip">${p.displayTitle}${p.isBookReview ? '<span class="review-chip">BOOK REVIEW</span>' : ''}</a>
       </h2>
       ${p.description ? `<p class="post-card__desc">${p.description}</p>` : ''}
       ${p.tags.length

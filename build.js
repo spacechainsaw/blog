@@ -30,6 +30,20 @@ function copyAsset(src, dest) {
   console.log('  copied ', path.relative(__dirname, dest));
 }
 
+function collectMarkdownFiles(dirPath) {
+  if (!fs.existsSync(dirPath)) return [];
+
+  return fs.readdirSync(dirPath, { withFileTypes: true }).flatMap((entry) => {
+    const fullPath = path.join(dirPath, entry.name);
+
+    if (entry.isDirectory()) {
+      return collectMarkdownFiles(fullPath);
+    }
+
+    return entry.isFile() && entry.name.endsWith('.md') ? [fullPath] : [];
+  });
+}
+
 function slugifyTag(tag) {
   return String(tag)
     .trim()
@@ -125,6 +139,19 @@ function formatRatingStars(rating) {
   const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
 
   return `${'★'.repeat(fullStars)}${hasHalfStar ? '½' : ''}${'☆'.repeat(emptyStars)}`;
+}
+
+function hasTag(tags, slug) {
+  return tags.some((tag) => tag.slug === slug);
+}
+
+function isBookReviewPost(tags) {
+  return hasTag(tags, 'book-review') || (hasTag(tags, 'books') && hasTag(tags, 'review'));
+}
+
+function toDisplayTitle(title) {
+  const normalized = String(title || '').replace(/^Book Review:\s*/i, '').trim();
+  return normalized || String(title || 'Untitled');
 }
 
 function stripMarkdown(markdown) {
@@ -224,15 +251,15 @@ function buildTagIndex(posts) {
 
 function readPosts() {
   const postsDir = path.join(__dirname, 'posts');
+  const markdownFiles = collectMarkdownFiles(postsDir);
 
-  if (!fs.existsSync(postsDir)) return [];
+  if (!markdownFiles.length) return [];
 
-  return fs
-    .readdirSync(postsDir)
-    .filter((f) => f.endsWith('.md'))
-    .map((filename) => {
-      const raw = fs.readFileSync(path.join(postsDir, filename), 'utf8');
+  return markdownFiles
+    .map((filePath) => {
+      const raw = fs.readFileSync(filePath, 'utf8');
       const { data, content } = matter(raw);
+      const filename = path.basename(filePath);
 
       // slug: use frontmatter slug, or derive from filename
       const slug = data.slug || filename.replace(/\.md$/, '');
@@ -288,6 +315,8 @@ function readPosts() {
     .filter((post) => !post.draft)
     .map((post) => ({
       ...post,
+      displayTitle: toDisplayTitle(post.title),
+      isBookReview: isBookReviewPost(post.tags),
       readingTimeLabel: `${post.readingTimeMinutes} minute read`,
       ratingLabel: post.rating !== null ? `${post.rating}/5` : '',
       ratingStars: formatRatingStars(post.rating),

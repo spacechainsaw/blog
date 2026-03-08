@@ -283,6 +283,29 @@ body.nav-open .nav-backdrop {
   line-height: 1.5;
 }
 
+.title-with-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.review-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--accent-dim);
+  border-radius: 6px;
+  padding: 0.08rem 0.42rem;
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 0.58em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
 .tag-list {
   display: flex;
   flex-wrap: wrap;

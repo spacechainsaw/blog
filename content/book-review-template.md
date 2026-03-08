@@ -1,19 +1,18 @@
 ---
-title: "Book Review: [Book Title]"
+title: "[Book Title]"
 author: "[Author Name]"
 date: YYYY-MM-DD
 description: "A short 1–2 sentence summary of your review."
 rating: 4.5
 draft: true
 tags:
-  - books
-  - review
+  - book review
   - [genre]
 ---
 
 > The `rating` field in frontmatter is rendered in the post header (with stars), alongside description and tags.
 
-# Book Review: [Book Title]
+# [Book Title]
 
 - Author: [Author Name]
 - Genre: [Genre]

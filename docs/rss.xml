@@ -4,10 +4,10 @@
     <title>space-chainsaw</title>
     <link>https://spacechainsaw.blog</link>
     <description>space chainsaw — a static blog</description>
-    <lastBuildDate>Sun, 08 Mar 2026 04:55:40 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 08 Mar 2026 05:36:35 GMT</lastBuildDate>
     
     <item>
-      <title>Book Review: The Will to Change</title>
+      <title>The Will to Change</title>
       <link>https://spacechainsaw.blog/posts/will-to-change/</link>
       <guid>https://spacechainsaw.blog/posts/will-to-change/</guid>
       <pubDate>Fri, 06 Mar 2026 00:00:00 GMT</pubDate>
@@ -19,6 +19,27 @@
       <guid>https://spacechainsaw.blog/posts/hello-world/</guid>
       <pubDate>Thu, 26 Feb 2026 00:00:00 GMT</pubDate>
       <description>What am I doing here?</description>
+    </item>
+    <item>
+      <title>Capitalism Realism</title>
+      <link>https://spacechainsaw.blog/posts/capitalism-realism/</link>
+      <guid>https://spacechainsaw.blog/posts/capitalism-realism/</guid>
+      <pubDate>Thu, 12 Dec 2024 00:00:00 GMT</pubDate>
+      <description>It is easier to imagine the end of the world than the end of capitalism.</description>
+    </item>
+    <item>
+      <title>Agony Of Eros</title>
+      <link>https://spacechainsaw.blog/posts/agony-of-eros/</link>
+      <guid>https://spacechainsaw.blog/posts/agony-of-eros/</guid>
+      <pubDate>Tue, 01 Oct 2024 00:00:00 GMT</pubDate>
+      <description>A review of Agony Of Eros that explores love, self, negativity. In such a narcissistic, self centered economy, one looks to avoid every sign of negativity and discomfort.</description>
+    </item>
+    <item>
+      <title>Down with the System: A Memoir (of sorts)</title>
+      <link>https://spacechainsaw.blog/posts/down-with-the-system/</link>
+      <guid>https://spacechainsaw.blog/posts/down-with-the-system/</guid>
+      <pubDate>Thu, 08 Aug 2024 00:00:00 GMT</pubDate>
+      <description>A moving reflection on how Serj Tankian’s memoir bridges the gap between rock stardom and radical activism, offering a masterclass on how to use power and art to honor one’s heritage and fight for global justice.</description>
     </item>
   </channel>
 </rss>

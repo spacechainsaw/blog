@@ -1,17 +1,16 @@
 ---
-title: "Book Review: The Dispossessed"
+title: "The Dispossessed"
 author: "Ursula K. Le Guin"
 date: 2026-03-06
 description: "A thoughtful sci-fi novel about society, freedom, and what it costs to imagine a better world."
 rating: 5
 draft: true
 tags:
-  - books
-  - review
+  - book review
   - sci-fi
 ---
 
-# Book Review: The Dispossessed
+# The Dispossessed
 
 - Author: Ursula K. Le Guin
 - Genre: Science Fiction

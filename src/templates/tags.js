@@ -36,7 +36,7 @@ function tagPage(tag) {
       (post) => `
       <li class="archive-item">
         <span class="archive-item__date">${post.date}${post.readingTimeLabel ? ` &bull; ${post.readingTimeLabel}` : ''}</span>
-        <a href="../../posts/${post.slug}/index.html" class="archive-item__title">${post.title}</a>
+        <a href="../../posts/${post.slug}/index.html" class="archive-item__title title-with-chip">${post.displayTitle}${post.isBookReview ? '<span class="review-chip">BOOK REVIEW</span>' : ''}</a>
       </li>`
     )
     .join('\n');

@@ -25,7 +25,7 @@ function archivePages(posts) {
       <li class="archive-item">
         <span class="archive-item__date">${p.date}${p.readingTimeLabel ? ` &bull; ${p.readingTimeLabel}` : ''}</span>
         <div class="archive-item__content">
-          <a href="${pageNum === 1 ? '' : '../'}../posts/${p.slug}/index.html" class="archive-item__title">${p.title}</a>
+          <a href="${pageNum === 1 ? '' : '../'}../posts/${p.slug}/index.html" class="archive-item__title title-with-chip">${p.displayTitle}${p.isBookReview ? '<span class="review-chip">BOOK REVIEW</span>' : ''}</a>
           ${p.tags.length
             ? `<div class="tag-list">${p.tags
                 .map(

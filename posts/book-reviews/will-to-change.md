@@ -1,13 +1,12 @@
 ---
-title: "Book Review: The Will to Change"
+title: "The Will to Change"
 author: "bell hooks"
 date: 2026-03-06
 description: In 2026, we’re done stepping on eggshells. bell hooks’ The Will to Change was a 2003 act of courage, but today, prioritizing male "palatability" feels like a luxury we can’t afford while female survival is still at stake.
 rating: 2.5
 draft: false
 tags:
-  - books
-  - review
+  - book review
   - phylosophy
   - gender
   - feminism
